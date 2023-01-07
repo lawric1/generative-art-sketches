@@ -47,6 +47,8 @@ function setup() {
 
 	stroke("black");
 	drawCircle(p0, 30, "white");
+
+	// saveCanvas("sketch2", "jpg");
 }
 
 function draw() {}

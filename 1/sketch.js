@@ -37,6 +37,8 @@ function setup() {
 	drawCircle(pos1, 30, "black");
 	fill(color(mainColor, 50, 0));
 	drawCircle(pos1, 20, "black");
+
+	// saveCanvas("sketch1", "jpg");
 }
 
 function draw() {}
