@@ -16,4 +16,4 @@ Sketch 3
 
 Sketch 4
 
-![sketch4](https://i.postimg.cc/Bv2myyzy/sketch4.gif)
+![sketch4](https://i.postimg.cc/ZYvxDXyL/sketch4.gif)
