@@ -9,6 +9,8 @@ function setup() {
 	for (let i = 0; i < rainAmount; i++) {
 		raindropArray.push(new Raindrop());
 	}
+
+	// createLoop({ duration: 3, gif: true });
 }
 
 function draw() {
