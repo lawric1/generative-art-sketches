@@ -10,10 +10,15 @@ Sketch 2
 
 ![sketch2](https://i.postimg.cc/43KnJczC/sketch2.jpg)
 
-Sketch 3
+Sketch 3 - Lamp
 
 ![sketch3](https://i.postimg.cc/MZ3JqLKL/sketch3.gif)
 
-Sketch 4
+Sketch 4 - Rain
 
-![sketch4](https://i.postimg.cc/Bv2myyzy/sketch4.gif)
+![sketch4](https://i.postimg.cc/ZYvxDXyL/sketch4.gif)
+
+Sketch 5 - Snow
+
+![sketch5](https://i.postimg.cc/1tDYpm27/sketch5.gif)
+
