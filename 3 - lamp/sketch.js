@@ -1,8 +1,9 @@
 function setup() {
 	createCanvas(600, 600);
 	frameRate(10);
+	colorMode(HSB);
 
-	accentColor = color(50, 150, 250);
+	accentColor = color(random(255), 150, 255);
 	// Lines
 	LineTopStart = new Vector(width / 2, 0);
 	LineTopEnd = new Vector(width / 2, height / 3);
