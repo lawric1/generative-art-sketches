@@ -22,3 +22,6 @@ Sketch 5 - Snow
 
 ![sketch5](https://i.postimg.cc/1tDYpm27/sketch5.gif)
 
+Sketch 6 - Rasterizing effect 
+
+![sketch6](https://i.postimg.cc/VkRBw3k5/sketch6.gif)
