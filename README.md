@@ -25,3 +25,7 @@ Sketch 5 - Snow
 Sketch 6 - Rasterizing effect 
 
 ![sketch6](https://i.postimg.cc/VkRBw3k5/sketch6.gif)
+
+Sketch 7 - Mitosis 
+
+![sketch7](https://i.postimg.cc/Hxm6XkQz/sketch7.gif)
