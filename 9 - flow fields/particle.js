@@ -11,10 +11,12 @@ class Particle {
 		this.velocity.add(this.acceleration);
 		this.velocity.limit(this.maxSpeed);
 		this.position.add(this.velocity);
-		this.acceleration.mult(0); //Reset acceleration each update
+		//Reset acceleration each update
+		this.acceleration.mult(0);
 
 		this.lifeSpam -= 1;
 
+		// Prevents particle from circling the points for too long
 		if (this.lifeSpam <= 0) {
 			this.position = createVector(random(width), random(height));
 			this.lifeSpam = 200;
@@ -22,6 +24,7 @@ class Particle {
 	}
 
 	follow(flowField) {
+		// Find the nearest vector in the flowfield based on the current particle position
 		let x = floor(this.position.x / tileSize);
 		let y = floor(this.position.y / tileSize);
 		let index = x + y * cols;
@@ -39,6 +42,7 @@ class Particle {
 	}
 
 	handleEdges() {
+		// If particle reach edges make it loop around
 		if (this.position.x > width) {
 			this.position.x = 0;
 		}
@@ -53,10 +57,12 @@ class Particle {
 		}
 	}
 
-	handleRange(targets) {
-		for (let i = 0; i < targets.length; i++) {
-			let target = targets[i];
-			let distance = dist(this.position.x, this.position.y, target.x, target.y);
+	handleRange(attractorPoints) {
+		// if particle gets too close to the attraction points,
+		// reset its position and lifetime
+		for (let i = 0; i < attractorPoints.length; i++) {
+			let attractor = attractorPoints[i];
+			let distance = dist(this.position.x, this.position.y, attractor.x, attractor.y);
 
 			if (distance < 10) {
 				this.position = createVector(random(width), random(height));
