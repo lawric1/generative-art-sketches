@@ -4,15 +4,17 @@ Small projects i did in p5.js. It'll vary from simple artsy stuff, algorithm imp
 
 Sketch 1
 
-![sketch1](https://i.postimg.cc/L5WzsSnv/sketch1.jpg)
+<img src="https://i.postimg.cc/L5WzsSnv/sketch1.jpg" width="300" height="300">
 
 Sketch 2
 
-![sketch2](https://i.postimg.cc/43KnJczC/sketch2.jpg)
+<img src="https://i.postimg.cc/43KnJczC/sketch2.jpg" width="300" height="300">
+
 
 Sketch 3 - Lamp
 
-![sketch3](https://i.postimg.cc/MZ3JqLKL/sketch3.gif)
+<img src="https://i.postimg.cc/MZ3JqLKL/sketch3.gif" width="300" height="300">
+
 
 Sketch 4 - Rain
 
@@ -29,3 +31,11 @@ Sketch 6 - Rasterizing effect
 Sketch 7 - Mitosis 
 
 ![sketch7](https://i.postimg.cc/Hxm6XkQz/sketch7.gif)
+
+Sketch 8 - 2D Fractals 
+
+<p float="left"> 
+  <img src="./8%20-%20fractals/screenshots/fractal1.jpg" width="300" height="300">
+  <img src="./8%20-%20fractals/screenshots/fractal5.jpg" width="300" height="300">
+  <img src="./8%20-%20fractals/screenshots/fractal7.jpg" width="300" height="300">
+</p>
