@@ -4,7 +4,6 @@ class Particle {
 		this.velocity = createVector(0, 0);
 		this.acceleration = createVector(0, 0);
 		this.maxSpeed = random(4, 8);
-		this.lifeSpam = 100;
 	}
 
 	update() {
@@ -13,14 +12,6 @@ class Particle {
 		this.position.add(this.velocity);
 		//Reset acceleration each update
 		this.acceleration.mult(0);
-
-		this.lifeSpam -= 1;
-
-		// Prevents particle from circling the points for too long
-		if (this.lifeSpam <= 0) {
-			this.position = createVector(random(width), random(height));
-			this.lifeSpam = 200;
-		}
 	}
 
 	follow(flowField) {
@@ -57,16 +48,15 @@ class Particle {
 		}
 	}
 
-	handleRange(attractorPoints) {
-		// if particle gets too close to the attraction points,
-		// reset its position and lifetime
-		for (let i = 0; i < attractorPoints.length; i++) {
-			let attractor = attractorPoints[i];
-			let distance = dist(this.position.x, this.position.y, attractor.x, attractor.y);
+	handleRange(influencePoints) {
+		// if particle gets too close to the  linfluence points,
+		// reset its position
+		for (let i = 0; i < influencePoints.length; i++) {
+			let point = influencePoints[i];
+			let distance = dist(this.position.x, this.position.y, point.x, point.y);
 
-			if (distance < 10) {
+			if (distance < random(50)) {
 				this.position = createVector(random(width), random(height));
-				this.lifeSpam = 200;
 			}
 		}
 	}

@@ -3,11 +3,11 @@ let alpha;
 let tileSize = 24;
 let cols, rows;
 
-let maxParticles = 300;
+let maxParticles = 200;
 
 let flowField = [];
 
-let attractorPoints = [];
+let influencePoints = [];
 
 let xOff = 0;
 let yOff = 0;
@@ -24,7 +24,7 @@ function setup() {
 	rows = height / tileSize;
 
 	particleArray = [];
-	for (var i = 0; i < 300; i++) {
+	for (var i = 0; i < maxParticles; i++) {
 		particleArray[i] = new Particle();
 	}
 
@@ -34,15 +34,15 @@ function setup() {
 function draw() {
 	// Drawing the background with an alpha will add the trail effect;
 	background(0, alpha);
-
 	stroke(tint);
 
-	// Vector field based on generated perlin noise;
 	// noiseFlowField();
+	// orbitFlowField();
+	attractionFlowField();
 
-	// Vector field based on the attractor points position;
-	pointFlowField();
-	moveAttractorPoints();
+	// moveInfluencePoints();
+
+	drawParticles();
 }
 
 function noiseFlowField() {
@@ -71,54 +71,89 @@ function noiseFlowField() {
 	}
 }
 
-function pointFlowField() {
-	// Loops through a grid and create a vector for each point in the grid
+function attractionFlowField() {
 	for (let y = 0; y < rows; y++) {
 		for (let x = 0; x < cols; x++) {
 			let index = x + y * cols;
 			let position = createVector(x * cols, y * rows);
+			let flowVector = createVector(0, 0);
+
+			let closestAttractor = createVector(0, 0);
+			let closestDistance = Infinity;
 
 			// Check what is the closest attractor point
-			// and create a vector pointing at it
-			let flowVector = createVector(width, height);
+			for (let i = 0; i < influencePoints.length; i++) {
+				let attractor = influencePoints[i];
+				let distance = p5.Vector.dist(attractor, position);
 
-			for (let i = 0; i < attractorPoints.length; i++) {
-				let attractor = attractorPoints[i];
-				let direction = p5.Vector.sub(attractor, position);
-
-				if (direction.mag() < flowVector.mag()) {
-					flowVector = direction;
+				if (distance < closestDistance) {
+					closestDistance = distance;
+					closestAttractor = attractor;
 				}
 			}
 
-			// Normalized maintains the direction, but make the length 1
-			// So the magnitude is consistent in all vectors;
+			flowVector = p5.Vector.sub(closestAttractor, position);
 			flowVector.normalize();
 
 			flowField[index] = flowVector;
 		}
 	}
+}
 
+function orbitFlowField() {
+	for (let y = 0; y < rows; y++) {
+		for (let x = 0; x < cols; x++) {
+			let index = x + y * cols;
+			let position = createVector(x * cols, y * rows);
+			let flowVector = createVector(0, 0);
+			let closestOrbit = null;
+			let closestDistance = Infinity;
+
+			// Checks what is the closest orbit point;
+			for (let i = 0; i < influencePoints.length; i++) {
+				let orbit = influencePoints[i];
+				let distance = p5.Vector.dist(position, orbit);
+
+				if (distance < closestDistance) {
+					closestDistance = distance;
+					closestOrbit = orbit;
+				}
+			}
+
+			// Threshold will make the orbit only affect close points;
+			let thresholdDistance = 100;
+			if (closestDistance < thresholdDistance) {
+				let direction = p5.Vector.sub(position, closestOrbit);
+				direction.normalize();
+				flowVector = direction.rotate(HALF_PI);
+			}
+
+			flowField[index] = flowVector;
+		}
+	}
+}
+
+function moveInfluencePoints() {
+	for (let i = 0; i < influencePoints.length; i++) {
+		let point = influencePoints[i];
+		point.x = noise(xOff + i) * width;
+		point.y = noise(yOff + i + 10) * height;
+	}
+
+	xOff += increment;
+	yOff += increment;
+}
+
+function drawParticles() {
 	for (var i = 0; i < maxParticles; i++) {
 		particleArray[i].follow(flowField);
 		particleArray[i].update();
-		particleArray[i].handleRange(attractorPoints);
+		particleArray[i].handleRange(influencePoints);
+		particleArray[i].handleEdges();
 		particleArray[i].show();
 	}
 }
 
-function moveAttractorPoints() {
-	// Move the attraction points based on perlin noise;
-	for (let i = 0; i < attractorPoints.length; i++) {
-		let attractor = attractorPoints[i];
-		attractor.x = noise(xOff + i) * width;
-		attractor.y = noise(yOff + i + 10) * height;
-	}
-
-	xOff += 0.01;
-	yOff += 0.01;
-}
-
 function mouseClicked() {
-	attractorPoints.push(createVector(mouseX, mouseY));
+	influencePoints.push(createVector(mouseX, mouseY));
 }
