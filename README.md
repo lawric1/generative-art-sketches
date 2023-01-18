@@ -35,23 +35,23 @@ Sketch 7 - Mitosis
 Sketch 8 - 2D Fractals 
 
 <p float="left"> 
-  <img src="08%20-%20fractals/screenshots/fractal1.jpg" width="300" height="300">
-  <img src="08%20-%20fractals/screenshots/fractal5.jpg" width="300" height="300">
-  <img src="08%20-%20fractals/screenshots/fractal7.jpg" width="300" height="300">
+  <img src="008%20-%20fractals/screenshots/fractal1.jpg" width="300" height="300">
+  <img src="008%20-%20fractals/screenshots/fractal5.jpg" width="300" height="300">
+  <img src="008%20-%20fractals/screenshots/fractal7.jpg" width="300" height="300">
 </p>
 
 Sketch 9 - Flow fields 
 
 <p float="left"> 
-  <img src="09%20-%20flow%20fields/screenshots/flow1.gif" width="300" height="300">
-  <img src="09%20-%20flow%20fields/screenshots/flow2.gif" width="300" height="300">
-  <img src="09%20-%20flow%20fields/screenshots/flow3.gif" width="300" height="300">
+  <img src="009%20-%20flow%20fields/screenshots/flow1.gif" width="300" height="300">
+  <img src="009%20-%20flow%20fields/screenshots/flow2.gif" width="300" height="300">
+  <img src="009%20-%20flow%20fields/screenshots/flow3.gif" width="300" height="300">
 </p>
 
 Sketch 10 - 1d terrain
 
 <p float="left"> 
-  <img src="10%20-%201d%20terrain%20procgen/screenshots/terrain1.jpg" width="300" height="300">
-  <img src="10%20-%201d%20terrain%20procgen/screenshots/terrain2.jpg" width="300" height="300">
-  <img src="10%20-%201d%20terrain%20procgen/screenshots/terrain3.jpg" width="300" height="300">
+  <img src="010%20-%201d%20terrain%20procgen/screenshots/terrain1.jpg" width="300" height="300">
+  <img src="010%20-%201d%20terrain%20procgen/screenshots/terrain2.jpg" width="300" height="300">
+  <img src="010%20-%201d%20terrain%20procgen/screenshots/terrain3.jpg" width="300" height="300">
 </p>
