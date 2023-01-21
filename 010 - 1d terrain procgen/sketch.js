@@ -51,5 +51,5 @@ function createLayer(type, roughness, verticalDisplacement, brightness) {
 function mouseReleased() {
 	redraw();
 
-	save("image.jpg");
+	// save("image.jpg");
 }
