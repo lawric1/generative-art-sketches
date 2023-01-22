@@ -63,3 +63,11 @@ Sketch 11 - 2d terrain
   <img src="011%20-%202d%20terrain%20procgen/screenshots/terrain2.jpg" width="300" height="300">
   <img src="011%20-%202d%20terrain%20procgen/screenshots/terrain3.jpg" width="300" height="300">
 </p>
+
+Sketch 12 - ascii art
+
+<p float="left"> 
+  <img src="012%20-%20ascii%20art/screenshots/ascii1.jpg" width="300" height="300">
+  <img src="012%20-%20ascii%20art/screenshots/ascii2.jpg" width="300" height="300">
+  <img src="012%20-%20ascii%20art/screenshots/ascii3.jpg" width="300" height="300">
+</p>
