@@ -14,6 +14,14 @@ class Island {
 
 		// Uses the scaled grid size as the canvas size
 		this.canvasSize = this.gridSize * this.cellSize;
+
+		this.palette = {
+			WATER: ["rgb(56,103,175)", "rgb(65,124,201)"],
+			SAND: ["rgb(183, 183, 71)", "rgb(242,223,152)"],
+			GRASS: ["rgb(122,166,71)", "rgb(136,208,42)"],
+			FOREST: ["rgb(102,136,59)", "rgb(67,114,95)"],
+			MOUNTAIN: ["rgb(63,73,75)", "rgb(74,89,100)"],
+		};
 	}
 
 	show() {
@@ -21,12 +29,37 @@ class Island {
 
 		for (let y = 0; y < this.gridSize; y++) {
 			for (let x = 0; x < this.gridSize; x++) {
-				let cell = this.heightMap[y][x];
-
-				fill(cell * 255);
-				stroke(cell * 255);
-				square(x * this.cellSize, y * this.cellSize, this.cellSize);
+				this.colorCell(x, y);
 			}
+		}
+	}
+
+	colorCell(x, y) {
+		let [terrainType, minValue, maxValue] = this.getTerrainType(x, y);
+		let colorPalette = this.palette[terrainType];
+		let colorIndex = floor(
+			map(this.heightMap[x][y], minValue, maxValue, 0, colorPalette.length)
+		);
+		let terrainColor = this.palette[terrainType][colorIndex];
+
+		fill(terrainColor);
+		stroke(terrainColor);
+		square(x * this.cellSize, y * this.cellSize, this.cellSize);
+	}
+
+	getTerrainType(x, y) {
+		// Assign terrain type based on the cell luminance
+
+		if (this.heightMap[x][y] < 0.2) {
+			return ["WATER", 0.0, 0.2];
+		} else if (this.heightMap[x][y] < 0.3) {
+			return ["SAND", 0.2, 0.3];
+		} else if (this.heightMap[x][y] < 0.5) {
+			return ["GRASS", 0.3, 0.5];
+		} else if (this.heightMap[x][y] < 0.6) {
+			return ["FOREST", 0.5, 0.6];
+		} else if (this.heightMap[x][y] >= 0.6) {
+			return ["MOUNTAIN", 0.6, 1];
 		}
 	}
 
@@ -46,6 +79,12 @@ class Island {
 			// Reduce the roughness factor for the next iteration
 			roughnessFactor *= this.roughnessDecay;
 			stepSize /= 2;
+		}
+
+		for (let y = 0; y < this.gridSize; y++) {
+			for (let x = 0; x < this.gridSize; x++) {
+				this.heightMap[x][y] = constrain(this.heightMap[x][y], 0, 0.999);
+			}
 		}
 	}
 
