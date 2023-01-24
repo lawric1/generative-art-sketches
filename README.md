@@ -71,3 +71,9 @@ Sketch 12 - ascii art
   <img src="012%20-%20ascii%20art/screenshots/ascii2.jpg" width="300" height="300">
   <img src="012%20-%20ascii%20art/screenshots/ascii3.jpg" width="300" height="300">
 </p>
+
+Sketch 13 - n-body
+
+<p float="left"> 
+  <img src="013%20-%20n-body/screenshots/1.gif" width="300" height="300">
+</p>
