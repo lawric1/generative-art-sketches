@@ -77,3 +77,9 @@ Sketch 13 - n-body
 <p float="left"> 
   <img src="013%20-%20n-body/screenshots/1.gif" width="300" height="300">
 </p>
+
+Sketch 14 - cloth
+
+<p float="left"> 
+  <img src="014%20-%20cloth/screenshots/1.gif" width="300" height="300">
+</p>
