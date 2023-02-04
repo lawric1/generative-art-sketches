@@ -91,3 +91,9 @@ Sketch 15 - reaction diffusion
   <img src="015 - reaction diffusion/screenshots/2.jpg" width="300" height="300">
   <img src="015 - reaction diffusion/screenshots/3.jpg" width="300" height="300">
 </p>
+
+Sketch 16 - tessellation
+
+<p float="left"> 
+  <img src="016 - tessellation/screenshots/1.jpg" width="300" height="300">
+</p>
