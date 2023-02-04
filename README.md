@@ -87,7 +87,13 @@ Sketch 14 - cloth
 Sketch 15 - reaction diffusion
 
 <p float="left"> 
-  <img src="015%20-%20reaction%20diffusion/screenshots/1.png" width="300" height="300">
-  <img src="015%20-%20reaction%20diffusion/screenshots/2.png" width="300" height="300">
-  <img src="015%20-%20reaction%20diffusion/screenshots/3.png" width="300" height="300">
+  <img src="015 - reaction diffusion/screenshots/1.jpg" width="300" height="300">
+  <img src="015 - reaction diffusion/screenshots/2.jpg" width="300" height="300">
+  <img src="015 - reaction diffusion/screenshots/3.jpg" width="300" height="300">
+</p>
+
+Sketch 16 - tessellation
+
+<p float="left"> 
+  <img src="016 - tessellation/screenshots/1.jpg" width="300" height="300">
 </p>
