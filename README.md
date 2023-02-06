@@ -97,3 +97,10 @@ Sketch 16 - tessellation
 <p float="left"> 
   <img src="016 - tessellation/screenshots/1.jpg" width="300" height="300">
 </p>
+
+Sketch 17 - boids
+
+<p float="left"> 
+  <img src="017 - boids/screenshots/1.gif" width="300" height="300">
+  <img src="017 - boids/screenshots/2.gif" width="300" height="300">
+</p>
