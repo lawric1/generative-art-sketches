@@ -42,19 +42,19 @@ function draw() {
 
 // Function to create UI elements (sliders)
 function initializeUI() {
-	visionSlider = createSlider(0, 100, 100, 5);
+	visionSlider = createSlider(0, 100, 75, 5);
 	visionSlider.position(0, height);
 	visionSlider.style("width", "400px");
 
-	cohesionSlider = createSlider(0, 1, 0.5, 0.1);
+	cohesionSlider = createSlider(0, 0.1, 0.01, 0.005);
 	cohesionSlider.position(0, height + 20);
 	cohesionSlider.style("width", "400px");
 
-	separationSlider = createSlider(0, 1, 0.5, 0.1);
+	separationSlider = createSlider(0, 0.1, 0.01, 0.005);
 	separationSlider.position(0, height + 40);
 	separationSlider.style("width", "400px");
 
-	alignmentSlider = createSlider(0, 1, 0.3, 0.1);
+	alignmentSlider = createSlider(0, 0.1, 0.01, 0.005);
 	alignmentSlider.position(0, height + 60);
 	alignmentSlider.style("width", "400px");
 }
@@ -66,15 +66,17 @@ function mousePressed() {
 }
 
 function mouseReleased() {
+	if (startX > width || startY > height) {
+		return;
+	}
+
 	endX = mouseX;
 	endY = mouseY;
 
-	if (0 < startX < width) {
-		let obstacleSize = dist(startX, startY, endX, endY);
-		obstacleSize = constrain(obstacleSize, 30, 60);
+	let obstacleSize = dist(startX, startY, endX, endY);
+	obstacleSize = constrain(obstacleSize, 30, 60);
 
-		obstacles.push({ position: createVector(startX, startY), size: obstacleSize });
-	}
+	obstacles.push({ position: createVector(startX, startY), size: obstacleSize });
 }
 
 function keyPressed() {
