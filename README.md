@@ -108,7 +108,7 @@ Sketch 17 - boids
 Sketch 18 - l-system
 
 <p float="left"> 
-  <img src="018 - l-system/screenshots/1.png" width="300" height="300">
-  <img src="018 - l-system/screenshots/2.png" width="300" height="300">
-  <img src="018 - l-system/screenshots/3.png" width="300" height="300">
+  <img src="018 - l-system/screenshots/1.jpg" width="300" height="300">
+  <img src="018 - l-system/screenshots/2.jpg" width="300" height="300">
+  <img src="018 - l-system/screenshots/3.jpg" width="300" height="300">
 </p>
